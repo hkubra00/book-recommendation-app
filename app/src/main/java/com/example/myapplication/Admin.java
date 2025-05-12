@@ -10,7 +10,7 @@ public class Admin extends User{
     }
 
     public void deleteBook(Book book) {
-        // Placeholder: logic to delete a book from the system
+        // Placeholder:
     }
 
     public void manageReports() {
