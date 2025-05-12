@@ -6,7 +6,7 @@ public class Admin extends User{
     }
 
     public void deleteUser(User user) {
-        // Placeholder: logic to delete a user from the system
+        // Placeholder: logic to delete a user from the systemclea
     }
 
     public void deleteBook(Book book) {
