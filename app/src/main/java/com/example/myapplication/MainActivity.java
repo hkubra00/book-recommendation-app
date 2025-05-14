@@ -1,17 +1,18 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import com.example.myapplication.ValidationUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import com.example.myapplication.ValidationUtils;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,57 +29,33 @@ public class MainActivity extends AppCompatActivity {
 
         // Set click listener on the button
         loginBtn.setOnClickListener(v -> {
-            // Get the input values
             String username = usernameInput.getText().toString().trim();
-            String password = passwordInput.getText().toString().trim();
+            String password = passwordInput.getText().toString();
 
-            // Simple validation
-            if (username.isEmpty() || password.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Please enter both username and password", Toast.LENGTH_SHORT).show();
+            if (!ValidationUtils.isValidUsername(username)) {
+                Toast.makeText(this, "Invalid username (3-15 characters, letters/numbers/underscores only)", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            if (!ValidationUtils.isValidPassword(password)) {
+                Toast.makeText(this, "Password must be 8+ characters with upper/lowercase, digit, and special character", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            //***replace with database lookup once connection established***
+            if (username.equals("admin") && password.equals("1234")) {
+                Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
+                // TODO: Navigate to next screen or homepage
             } else {
-                // Simulated login success/failure logic
-                if (username.equals("admin") && password.equals("1234")) {
-                    Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-
-                    // TODO: Navigate to next screen or homepage here
-                } else {
-                    Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                }
+                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
             }
         });
 
+        // Window insets adjustment
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
-            EditText usernameInput = findViewById(R.id.usernameEditText);
-            EditText passwordInput = findViewById(R.id.passwordEditText);
-            Button loginButton = findViewById(R.id.loginButton);
-
-            loginButton.setOnClickListener(v -> {
-                String username = usernameInput.getText().toString().trim();
-                String password = passwordInput.getText().toString();
-
-                if (!ValidationUtils.isValidUsername(username)) {
-                    Toast.makeText(this, "Invalid username (3-15 characters, letters/numbers/underscores only)", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                if (!ValidationUtils.isValidPassword(password)) {
-                    Toast.makeText(this, "Password must be 8+ characters with upper/lowercase, digit, and special character", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
-            });
-        }
-
-
-
         });
     }
-
-
-
 }
