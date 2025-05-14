@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import com.example.myapplication.ValidationUtils;
 
@@ -35,12 +36,34 @@ public class MainActivity extends AppCompatActivity {
             // Simple validation
             if (username.isEmpty() || password.isEmpty()) {
                 Toast.makeText(MainActivity.this, "Please enter both username and password", Toast.LENGTH_SHORT).show();
+                // Username validation
+                if (!ValidationUtils.isValidUsername(username)) {
+                    Toast.makeText(MainActivity.this, "Invalid username (3–15 characters, letters/numbers/underscores only)", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // Password validation
+                if (!ValidationUtils.isValidPassword(password)) {
+                    Toast.makeText(MainActivity.this, "Password must be 8+ characters with upper/lowercase, digit, and special character", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
             } else {
                 // Simulated login success/failure logic
                 if (username.equals("admin") && password.equals("1234")) {
                     Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
 
+                    Intent intent1 = new Intent(MainActivity.this, HomeActivity.class);
+                    intent1.putExtra("username", username);
+                    intent1.putExtra("user id", "user id");
+                    startActivity(intent1);
+                    finish();
+
                     // TODO: Navigate to next screen or homepage here
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish(); // Optional: closes login screen so user can't return with back button
+
                 } else {
                     Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }
