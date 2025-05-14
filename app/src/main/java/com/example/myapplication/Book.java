@@ -1,17 +1,19 @@
 package com.example.myapplication;
 
+import java.util.List;
+
 public class Book {
     private final int bookId;
     private final String title;
     private final String author;
-    private final String genre;
+    private final List<String> genres;
     private double averageRating;
 
-    public Book(int bookId, String title, String author, String genre, double averageRating) {
+    public Book(int bookId, String title, String author, List<String> genres, double averageRating) {
         this.bookId = bookId;
         this.title = title;
         this.author = author;
-        this.genre = genre;
+        this.genres = genres;
         this.averageRating = averageRating;
     }
     // Getters
@@ -24,8 +26,8 @@ public class Book {
     public String getAuthor() {
         return author;
     }
-    public String getGenre() {
-        return genre;
+    public List<String> getGenres() {
+        return genres;
     }
     public double getAverageRating() {
         return averageRating;
