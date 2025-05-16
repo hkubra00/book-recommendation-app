@@ -17,6 +17,11 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+
         profileUsername = findViewById(R.id.profileUsername);
         profileEmail = findViewById(R.id.usernameId);
         editProfileButton = findViewById(R.id.editProfileButton);
@@ -29,8 +34,6 @@ public class ProfileActivity extends AppCompatActivity {
         profileUsername.setText("Username: " + username);
         profileEmail.setText("user id: " + user_id);
 
-
-
         editProfileButton.setOnClickListener(v -> {
             // TODO: Navigate to EditProfileActivity (you can create this later)
         });
@@ -39,5 +42,15 @@ public class ProfileActivity extends AppCompatActivity {
             startActivity(new Intent(ProfileActivity.this, MainActivity.class));
             finish();
         });
+    }
+
+    // This method must be OUTSIDE of onCreate
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // Closes ProfileActivity and returns to previous activity (HomeActivity)
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,4 +1,4 @@
-package factory;
+package com.example.myapplication.factory;
 
 import com.example.myapplication.User;
 import com.example.myapplication.ValidationUtils;
