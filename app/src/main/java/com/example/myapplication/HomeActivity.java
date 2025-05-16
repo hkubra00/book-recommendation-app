@@ -20,29 +20,40 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        String username = getIntent().getStringExtra("username");
+        String userId = getIntent().getStringExtra("user id");
+
+        android.util.Log.d("HomeActivity", "Username received: " + username);
+        android.util.Log.d("HomeActivity", "User ID received: " + userId);
+
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
-        Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+        /*Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
         intent.putExtra("username", getIntent().getStringExtra("username"));
         intent.putExtra("user id", getIntent().getStringExtra("user id"));
         startActivity(intent);
+         */
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
             if (id == R.id.nav_home) {
-                // Already on Home
                 return true;
             } else if (id == R.id.nav_search) {
                 startActivity(new Intent(HomeActivity.this, SearchActivity.class));
                 return true;
             } else if (id == R.id.nav_profile) {
-                startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
+                Intent profileIntent = new Intent(HomeActivity.this, ProfileActivity.class);
+                profileIntent.putExtra("username", getIntent().getStringExtra("username"));
+                profileIntent.putExtra("user id", getIntent().getStringExtra("user id"));
+                startActivity(profileIntent);
                 return true;
             }
 
             return false;
         });
+
 
 
 
