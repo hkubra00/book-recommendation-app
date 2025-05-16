@@ -13,34 +13,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.database.Cursor;
+
 
 public class MainActivity extends AppCompatActivity {
-    BookDatabaseHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
-
-        dbHelper = new BookDatabaseHelper(this);
-
-        // Add sample books
-        dbHelper.addBook("1984", "George Orwell", "Dystopian", 4.8, true);
-        dbHelper.addBook("The Hobbit", "J.R.R. Tolkien", "Fantasy", 4.7, true);
-
-        // Retrieve and display recommended books
-        Cursor cursor = dbHelper.getRecommendedBooks();
-        if (cursor.moveToFirst()) {
-            do {
-                String title = cursor.getString(cursor.getColumnIndexOrThrow(BookDatabaseHelper.COLUMN_TITLE));
-                String author = cursor.getString(cursor.getColumnIndexOrThrow(BookDatabaseHelper.COLUMN_AUTHOR));
-                Toast.makeText(this, "Title: " + title + " by " + author, Toast.LENGTH_LONG).show();
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-
 
         // Initialize UI components
         EditText usernameInput = findViewById(R.id.usernameInput);
