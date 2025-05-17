@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Username</string>
+    <string name="signup_prompt">Don\'t have an account? Sign up</string>
+    <string name="book_list_description">List of books</string>
 </resources>

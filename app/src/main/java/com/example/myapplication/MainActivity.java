@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Initialize UI components
-        EditText usernameInput = findViewById(R.id.usernameInput);
-        EditText passwordInput = findViewById(R.id.passwordInput);
+        EditText usernameInput = findViewById(R.id.username);
+        EditText passwordInput = findViewById(R.id.password);
         Button loginBtn = findViewById(R.id.loginButton);
 
         // Set click listener on the button
