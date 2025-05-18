@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import org.mindrot.jbcrypt.BCrypt;
+import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
 
