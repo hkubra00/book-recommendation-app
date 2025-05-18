@@ -37,8 +37,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("org.springframework.security:spring-security-core:5.5.0") // For BCrypt
+    implementation("org.mindrot:jbcrypt:0.4")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }
