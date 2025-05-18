@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -17,40 +18,60 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setHomeButtonEnabled(true);
-        }
+        try {
+            // ActionBar geri düğmesi
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                getSupportActionBar().setHomeButtonEnabled(true);
+            }
 
-        profileUsername = findViewById(R.id.profileUsername);
-        profileEmail = findViewById(R.id.usernameId);
-        editProfileButton = findViewById(R.id.editProfileButton);
-        logoutButton = findViewById(R.id.logoutButton);
+            // UI öğelerini bağla
+            profileUsername = findViewById(R.id.profileUsername);
+            profileEmail = findViewById(R.id.usernameId);
+            editProfileButton = findViewById(R.id.editProfileButton);
+            logoutButton = findViewById(R.id.logoutButton);
 
-        // Sample static user info (could be replaced with real data)
-        String username = getIntent().getStringExtra("username");
-        String user_id = getIntent().getStringExtra("user id");
+            if (profileUsername == null || profileEmail == null || editProfileButton == null || logoutButton == null) {
+                throw new NullPointerException("Bazı view'ler bulunamadı. XML dosyanızı kontrol edin.");
+            }
 
-        profileUsername.setText("Username: " + username);
-        profileEmail.setText("user id: " + user_id);
+            // Intent verisi al
+            String username = getIntent().getStringExtra("username");
+            String userId = getIntent().getStringExtra("user id");
 
-        editProfileButton.setOnClickListener(v -> {
-            // TODO: Navigate to EditProfileActivity (you can create this later)
-        });
+            if (username == null || userId == null) {
+                throw new IllegalArgumentException("Kullanıcı bilgileri eksik geldi.");
+            }
 
-        logoutButton.setOnClickListener(v -> {
-            startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+            profileUsername.setText("Username: " + username);
+            profileEmail.setText("user id: " + userId);
+
+            editProfileButton.setOnClickListener(v -> {
+                // Gelecekte edit ekranı eklenecekse buraya yönlendirme konulabilir.
+                Toast.makeText(this, "Profil düzenleme yakında eklenecek.", Toast.LENGTH_SHORT).show();
+            });
+
+            logoutButton.setOnClickListener(v -> {
+                startActivity(new Intent(ProfileActivity.this, MainActivity.class));
+                finish();
+            });
+
+        } catch (IllegalArgumentException e) {
+            Toast.makeText(this, "Kullanıcı bilgileri alınamadı. Ana sayfaya dönülüyor.", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(this, MainActivity.class));
             finish();
-        });
+        } catch (Exception e) {
+            Toast.makeText(this, "Bir hata oluştu: " + e.getMessage(), Toast.LENGTH_LONG).show();
+        }
     }
 
-    // This method must be OUTSIDE of onCreate
     @Override
     public boolean onOptionsItemSelected(android.view.MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            finish(); // Closes ProfileActivity and returns to previous activity (HomeActivity)
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 }
+
