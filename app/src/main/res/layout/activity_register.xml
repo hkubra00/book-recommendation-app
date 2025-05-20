@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="50dp"
+    android:background="@drawable/register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Logo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="10dp">
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:background="@drawable/mylogo" />
+        </LinearLayout>
+
+        <!-- Description Text -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Join a community of readers. Discover, rate, and recommend books you love."
+                android:textColor="@color/blue"
+                android:gravity="center"
+                android:textSize="17sp"
+                android:lines="4" />
+        </LinearLayout>
+
+        <!-- Full Name EditText -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp">
+            <EditText
+                android:id="@+id/txtSignUpFullName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:lines="1"
+                android:hint="Full Name"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:textColorHint="#a6a6a6"
+                android:textSize="17sp"
+                android:background="@drawable/sign_up_edittext_style" />
+        </LinearLayout>
+
+        <!-- Username EditText -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp">
+            <EditText
+                android:id="@+id/txtSignUpUsername"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:lines="1"
+                android:hint="Username"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/black"
+                android:textColorHint="#a6a6a6"
+                android:textSize="17sp"
+                android:background="@drawable/sign_up_edittext_style" />
+        </LinearLayout>
+
+        <!-- Password EditText -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="48dp">
+            <EditText
+                android:id="@+id/txtSignUpPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:background="@drawable/sign_up_edittext_style"
+                android:fontFamily="sans-serif-light"
+                android:lines="1"
+                android:textColorHint="#a6a6a6"
+                android:textColor="@color/black"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <!-- Sign Up Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="15dp">
+            <Button
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sign_up_button_style"
+                android:text="Sign up"
+                android:fontFamily="sans-serif-medium"
+                android:textAllCaps="false"
+                android:textColor="@color/nav_icon_color"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!-- Terms and Privacy -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By signing up, you agree to our Terms and Privacy Policy."
+                android:textColor="#999999"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Sign In -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/btnSignUpSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="sans-serif-light"
+                android:text="Have an account? Log in."
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
