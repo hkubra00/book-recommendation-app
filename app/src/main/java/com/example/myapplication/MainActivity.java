@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import org.mindrot.jbcrypt.BCrypt;
 import com.example.myapplication.R;
+import com.example.myapplication.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         EditText usernameInput = findViewById(R.id.username);
         EditText passwordInput = findViewById(R.id.password);
         Button loginBtn = findViewById(R.id.loginButton);
+
+        // Test the database connection asynchronously
+        DatabaseHelper.testQueryAsync();  // This runs in the background
 
         loginBtn.setOnClickListener(v -> {
             try {

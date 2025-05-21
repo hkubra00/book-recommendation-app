@@ -28,5 +28,6 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".ProfileActivity" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>
