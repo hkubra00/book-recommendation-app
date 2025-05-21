@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (!ValidationUtils.isValidPassword(password)) {
-                    Toast.makeText(MainActivity.this, "Password must be 8+ characters with upper/lowercase, digit, and special character", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Password must be at least 4 characters long.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

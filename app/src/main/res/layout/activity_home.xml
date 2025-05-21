@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:padding="40dp"
         android:layout_marginBottom="72dp"> <!-- Leave space for bottom nav -->
 
 
@@ -20,7 +20,7 @@
             android:id="@+id/welcomeCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
+            app:cardCornerRadius="20dp"
             app:cardElevation="6dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,8 +38,8 @@
                     android:id="@+id/tvWelcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Welcome to MeMyShelf&amp;I"
-                    android:textSize="22sp"
+                    android:text="Welcome to MeMyShelf&amp;I!"
+                    android:textSize="28sp"
                     android:textStyle="bold"
                     android:textColor="#2E2E2E"/>
 
@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rate, review, and get personalised book recommendations."
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textColor="#757575"
                     android:layout_marginTop="6dp"/>
             </LinearLayout>
@@ -60,10 +60,10 @@
         <LinearLayout
             android:id="@+id/buttonLayout"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintTop_toBottomOf="@id/welcomeCard"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -79,6 +79,7 @@
                 android:layout_marginBottom="12dp"
                 android:textColor="@android:color/black"
                 app:icon="@drawable/ic_book"
+                app:iconTint="@color/black"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
                 app:strokeColor="@color/purple_500"
@@ -95,6 +96,7 @@
                 android:layout_marginBottom="12dp"
                 android:textColor="@android:color/black"
                 app:icon="@drawable/ic_star"
+                app:iconTint="@color/black"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
                 app:strokeColor="@color/blue"
@@ -111,6 +113,7 @@
                 android:layout_marginBottom="12dp"
                 android:textColor="@android:color/black"
                 app:icon="@drawable/ic_recommend"
+                app:iconTint="@color/black"
                 app:iconGravity="textStart"
                 app:iconPadding="8dp"
                 app:strokeColor="@color/teal_700"
@@ -118,22 +121,30 @@
 
 
             <!-- Log Out -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLogout"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Log Out"
-                android:textColor="#D32F2F"
-                app:icon="@drawable/ic_logout"
-
-                app:iconGravity="textStart"
-                app:iconPadding="8dp"
-                app:strokeColor="#D81B60"
-                app:strokeWidth="1dp" />
 
 
         </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogout"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="@android:color/white"
+            android:text="Log Out"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_logout"
+            app:iconGravity="textStart"
+            app:iconPadding="8dp"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.781"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="#D81B60"
+            app:strokeWidth="1dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
