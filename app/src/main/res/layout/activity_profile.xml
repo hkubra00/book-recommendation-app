@@ -4,45 +4,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="16dp"
+    android:background="@drawable/register">
 
-    <!-- Profile Picture -->
-    <ImageView
-        android:id="@+id/profileImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@android:drawable/sym_def_app_icon"
-        android:scaleType="centerCrop"
-        android:layout_marginTop="24dp"
+    <!-- Card Container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="Profile Picture" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- Username -->
-    <TextView
-        android:id="@+id/profileUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username:"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/profileImage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
 
-    <!-- User Id -->
-    <TextView
-        android:id="@+id/usernameId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="user id:"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/profileUsername"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+            <!-- Profile Picture -->
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/profile"
+                android:contentDescription="Profile Picture" />
+
+            <!-- Username -->
+            <TextView
+                android:id="@+id/profileUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginTop="8dp" />
+
+            <!-- User ID -->
+            <TextView
+                android:id="@+id/usernameId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User ID: 12345"
+                android:textSize="16sp"
+                android:textColor="#666666"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
     <!-- Edit Profile Button -->
     <Button
@@ -50,10 +65,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Edit Profile"
-        app:layout_constraintTop_toBottomOf="@id/usernameId"
+        android:backgroundTint="#5E67E7"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="12dp"
+        app:layout_constraintTop_toBottomOf="@id/profileCard"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Logout Button -->
     <Button
@@ -61,9 +79,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Logout"
+        android:backgroundTint="#93C1F0"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="12dp"
+        app:cornerRadius="12dp"
         app:layout_constraintTop_toBottomOf="@id/editProfileButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
