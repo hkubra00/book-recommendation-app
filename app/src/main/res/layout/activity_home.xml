@@ -122,8 +122,6 @@
 
 
             <!-- Log Out -->
-
-
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton

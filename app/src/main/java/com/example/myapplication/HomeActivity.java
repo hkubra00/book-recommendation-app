@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
                 return false;
             });
 
-            logoutButton = findViewById(R.id.logoutButton);
+            logoutButton = findViewById(R.id.btnLogout);
 
             if (logoutButton != null) {
                 logoutButton.setOnClickListener(new View.OnClickListener() {
