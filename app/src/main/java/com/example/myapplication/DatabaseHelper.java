@@ -28,7 +28,7 @@ public class DatabaseHelper {
             // URL format: jdbc:mysql://<ip>:<port>/<db_name>
             String url = "jdbc:mysql://10.204.47.188:3306/bookrecommendationapp";
             String username = "rmysd";
-            String password = "kanseidorifto";
+            String password = "kanseidorifto06";
 
             // Establishing the connection to the database
             conn = DriverManager.getConnection(url, username, password);
