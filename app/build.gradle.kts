@@ -37,10 +37,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation("org.springframework.security:spring-security-core:5.5.0") // For BCrypt
-    implementation("org.mindrot:jbcrypt:0.4")
-    implementation(files("libs/mysql-connector-j-9.3.0.jar")) 
-
+    // For BCrypt
+    implementation(libs.jbcrypt)
+    //MySQL JDBC connector (from local libs folder)
+    implementation(files("libs/mysql-connector-j-9.3.0.jar"))
+    // Unit and Android testing dependencies
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
