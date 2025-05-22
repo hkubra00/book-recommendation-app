@@ -1,35 +1,41 @@
-# MeMyShelf&I Book Rating and Recommendation App
+MeMyShelf&I Kitap Puanlama ve Tavsiye Uygulaması
 
-## Description  
-MeMyShelf&I is an Android mobile application developed in Java with MySQL backend, designed for users to rate books and get personalized recommendations. It helps readers discover new books based on their ratings and preferences.
+Açıklama
 
-## Features  
-- User registration and login  
-- Rate books and write reviews  
-- View personalized book recommendations  
-- Search and browse book catalog
+MeMyShelf&I, Java ile geliştirilmiş ve MySQL veritabanı kullanmayı hedefleyen bir Android mobil uygulamasıdır. Kullanıcıların kitaplara puan verip yorum yapmalarına ve kişisel tercihlerine göre kitap önerileri almalarına olanak tanır. Bu sayede okuyucular, ilgi alanlarına uygun yeni kitaplar keşfedebilirler.
 
-## Installation  
-1. Clone the repository.  
-2. Set up the MySQL database using the provided schema (`database/schema.sql`).  
-3. Open the project in Android Studio.  
-4. Configure the database connection settings in `config.java`.  
-5. Build and run the app on an Android device or emulator.
+Hedeflenen Özellikler
 
-## Usage  
-- Register a new user or login with existing credentials.  
-- Rate books from the catalog and get recommendations on the home screen.
+Kullanıcı kaydı ve giriş
+Kitaplara puan verme ve yorum yazma
+Kişiselleştirilmiş kitap önerilerini görüntüleme
+Kitap kataloğunu arama ve göz atma
 
-## Project Structure  
-- `/app` – Android source code  
-- `/database` – SQL scripts and data dumps  
-- `/docs` – Documentation and diagrams  
+Kurulum
 
-## Contributing  
-This project is intended for use by our team members only. Please contact the project lead before contributing.
+1. Android Studio indirin.
+2. Depoyu Android Studio'da klonlayın.
+3. Project View'de MyApplication>app>source>main>java>com.example.myapplication yolundan projemizin koduna erişim sağlayın.
+4. Kullanıcı arayüz ekranlarını görmek için MyApplication>app>source>main>res>layout yolunu izleyin. Sağ üst köşede yer alan view modlarından split seçeneğini seçerek arayüz kodunu ve ekranını görüntüleyin.
 
-## License  
-Private project — all rights reserved.
+Hedeflenen Kullanım
 
-## Contact  
-For questions or support, contact: hkubra.kusku@gamil.com
+Yeni bir kullanıcı kaydı oluşturun veya mevcut hesapla giriş yapın.
+Katalogdaki kitaplara puan verin ve ana ekranda öneriler alın.
+
+Proje Yapısı
+
+/app – Android kaynak kodları
+/database – SQL betikleri ve veri dökümleri
+/docs – Dokümantasyon ve diyagramlar
+Katkıda Bulunma
+
+Bu proje yalnızca ekip üyelerimiz tarafından kullanılmak üzere hazırlanmıştır. Katkıda bulunmak için lütfen proje sorumlusu ile iletişime geçin.
+
+Lisans
+
+Özel proje — tüm hakları saklıdır.
+
+İletişim
+
+Sorularınız veya destek talepleriniz için iletişime geçin: hkubra@gmail.com
